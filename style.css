@@ -1,322 +1,47 @@
-/* =====================================================================
-   atv01.css  —  ARQUIVO DE TRABALHO DA ATIVIDADE
-   ---------------------------------------------------------------------
-
-   Reflexão escrita do bloco 1:
-   O "rem" utiliza o tamanho da fonte do elemento raiz (html) como referência,
-   sendo indicado para fontes e tamanhos que precisam manter proporção durante
-   zoom e alterações do navegador.
-   O "em" depende do tamanho da fonte do elemento pai, sendo útil para criar
-   espaçamentos proporcionais ao conteúdo.
-   O "%", "vw" e "vh" são unidades flexíveis que acompanham o tamanho do
-   elemento ou da tela, ajudando na criação de páginas responsivas.
-
-*/
-
-/* ---------- Base ---------- */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  color: #212121;
-  background-color: #white;
+body{
+    font-family: Arial, sans-serif;
+    background: white;
+    margin: 0;
+    padding: 20px;
 }
 
-/* ---------- Cabeçalho ---------- */
-.cabecalho {
-  background-color: #00695c;
-  padding: 2rem;
+.container{
+    width: 100%;
 }
 
-h1, h2, h3 {
-  margin: 0;
+h1{
+    margin-bottom: 5px;
 }
 
-h1 {
-  color: #white;
-  font-size: 2rem;
+.subtitulo{
+    color: gray;
+    margin-top: 0;
 }
 
-.subtitulo {
-  color: #b2dfdb;
-  font-size: 1rem;
+.foto{
+    width: 250px;
+    border-radius: 10px;
 }
 
-
-/* ---------- Menu de navegação ---------- */
-.menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0 0 0;
+.botao{
+    display: inline-block;
+    color: white;
+    background: black;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
 }
 
-.menu li {
-  display: inline-block;
-  margin-right: 1.5rem;
+section{
+    margin-top: 20px;
 }
 
-
-/*
-Reflexão escrita do bloco 2:
-O seletor descendente (.menu a) seleciona elementos que estejam dentro de outro
-elemento, podendo estar em qualquer nível. Já o seletor de filho direto (>)
-seleciona somente elementos ligados diretamente ao pai, evitando alterações
-em elementos internos mais profundos.
-*/
-
-
-.menu a {
-  color: white;
-  font-size: 1rem;
-  text-decoration: none;
+section p{
+    margin: 8px 0;
 }
 
-.menu a::before {
-  content: "> ";
-}
-
-.menu a:hover {
-  color: #80cbc4;
-  text-decoration: underline;
-}
-
-
-/* ---------- Seções ---------- */
-.secao {
-  padding: 2rem;
-  max-width: 60rem;
-  width: 100%;
-}
-
-h2 {
-  color: #00695c;
-  font-size: 1.5rem;
-}
-
-h2 + p {
-  margin-top: 1.5rem;
-}
-
-h3 {
-  color: #004d40;
-  font-size: 1.25rem;
-}
-
-p {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-
-.destaque {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #e65100;
-}
-
-.destaque ~ p {
-  font-style: italic;
-  color: #795548;
-}
-
-
-/* ---------- Grade de trilhas ---------- */
-
-.cartao {
-  display: inline-block;
-  width: 100%;
-  max-width: 17.5rem;
-  vertical-align: top;
-
-  border: 1px solid #aaaaaa;
-  background-color: white;
-
-  padding: 1em;
-  margin: 0.5em;
-}
-
-
-.cartao:not(:last-child) {
-  margin-bottom: 2em;
-}
-
-
-/*
-Reflexão escrita do bloco 3:
-O nth-child() permite selecionar elementos através da posição deles dentro
-de uma lista. Assim é possível aplicar estilos diferentes sem precisar criar
-novas classes no HTML.
-*/
-
-
-.cartao:nth-child(odd) {
-  background-color: #263238;
-  color: white;
-}
-
-
-.cartao:nth-child(even) {
-  background-color: #c8e6c9;
-}
-
-
-
-.botao {
-  display: inline-block;
-
-  background-color: #00695c;
-  color: white;
-
-  font-size: 1rem;
-
-  text-decoration: none;
-
-  padding: 0.5em 1em;
-
-  margin-top: 0.5em;
-}
-
-
-/*
-Bloco 4: especificidade
-
-Quando existem regras conflitantes, o CSS utiliza a especificidade para decidir
-qual será aplicada. O seletor ".cartao .botao" possui mais especificidade que
-".botao", pois possui duas classes, então ele terá prioridade.
-*/
-
-
-.cartao .botao {
-  background-color: #00897b;
-}
-
-
-.botao:hover {
-  background-color: #80cbc4;
-  color: black;
-}
-
-
-/* ---------- Lista de programação ---------- */
-
-.lista-dias {
-  font-size: 1rem;
-  line-height: 1.75rem;
-}
-
-
-.lista-dias > li {
-  font-weight: bold;
-}
-
-
-.lista-dias > li li {
-  font-weight: normal;
-}
-
-
-.lista-dias > li:first-child {
-  max-width: 25rem;
-  border: 4px solid #80cbc4;
-}
-
-
-.lista-dias > li:last-child {
-  max-width: 25rem;
-  border: 4px solid #80cbc4;
-}
-
-
-
-/* ---------- Formulário ---------- */
-
-.formulario {
-  max-width: 30rem;
-  width: 100%;
-}
-
-
-label {
-  display: block;
-
-  font-size: 1rem;
-
-  margin-top: 1rem;
-}
-
-
-label::after {
-  content: "*";
-}
-
-
-input, textarea {
-
-  display: block;
-
-  width: 80%;
-
-  font-size: 1rem;
-
-  padding: 0.5rem;
-
-  margin-top: 0.25rem;
-
-  border: 1px solid #grey;
-}
-
-
-
-input:focus, textarea:focus {
-
-  background-color: #b2dfdb;
-
-}
-
-
-
-input[type="email"] {
-
-  border: 2px solid #00695c;
-
-}
-
-
-
-input[type="password"] {
-
-  border: 2px dashed #00695c;
-
-}
-
-
-
-button {
-
-  font-size: 1rem;
-
-  color: white;
-
-  background-color: #00695c;
-
-  padding: 0.5rem 1.5rem;
-
-  margin-top: 1rem;
-
-  border: 0;
-
-}
-
-
-/* ---------- Rodapé ---------- */
-
-.rodape {
-
-  background-color: #102027;
-
-  color: #cfd8dc;
-
-  padding: 1.5rem;
-
-  font-size: 0.875rem;
-
+section a{
+    text-decoration: none;
+    color: blue;
 }
